@@ -1,0 +1,34 @@
+@startuml
+
+digraph foo {
+  node [style=rounded]
+  I[fillcolor=yellow]
+  F[fillcolor=yellow]
+  
+  I -> p1 [label="Inicio"]
+  
+  p1 -> p2 [label="Inicialización de resultado"]
+  p2 -> p4 [label="param > 0 y par"]
+  p2 -> p6 [label="param > 0 e impar"]
+  p2 -> p3 [label="param < 0"]
+  p2 -> p5 [label="param == 0"]
+
+  p4 -> p7 [label="Switch caso 1"]
+  p6 -> p7 [label="Switch caso 1"]
+  p3 -> p9 [label="Switch default"]
+  p5 -> p9 [label="Switch default"]
+  p4 -> p8 [label="Switch caso 2"]
+  p6 -> p8 [label="Switch caso 2"]
+  
+  p7 -> p10 [label="While bucle"]
+  p8 -> p10 [label="While bucle"]
+  p9 -> p10 [label="While bucle"]
+
+  p10 -> p11 [label="Iteración contador"]
+  p11 -> p11 [label="Iteración contador"]
+  p11 -> p12 [label="Return resultado"]
+
+  p12 -> F [label="Fin"]
+}
+
+@enduml
